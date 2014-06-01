@@ -37,9 +37,21 @@ public class Calculator {
 	private void simpleMathMenu() {
 		System.out.println("Would you like to:");
 		System.out.println("1. Add");
-		System.out.println("2. JFSD");
-		String decision1 = null;
-		if (decision1.equals("add") || Integer.parseInt(decision1) == 1) {
+		System.out.println("2. Subtract");
+		System.out.println("3. Multiply");
+		System.out.println("4. Divide");
+		String choice = sc.nextLine();
+		if (choice.equalsIgnoreCase("add") || Integer.parseInt(choice) == 1) {
+			
+		}
+
+		else if (choice.equals("subtract") || Integer.parseInt(choice) == 2) {
+			
+		}
+		else if (choice.equals("Multiply") || Integer.parseInt(choice) == 3) {
+			
+		}
+		else if (choice.equals("Divide") || Integer.parseInt(choice) == 4) {
 			
 		}
 	}
