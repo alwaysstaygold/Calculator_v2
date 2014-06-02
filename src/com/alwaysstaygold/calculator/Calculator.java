@@ -4,19 +4,24 @@ public class Calculator {
 	
 	Scanner sc = new Scanner(System.in);
 	
+	//Where the whole application really starts
 	public void start(){
 		
-		System.out.println("Welcome you! My name is Cally :) Do you want to be my friend?(Yes or no!)");
-		String friendship = sc.nextLine();
-		if (friendship.equalsIgnoreCase("yes")){
-			mainMenu();
-		}
-		else if (friendship.equalsIgnoreCase("no")){
-			System.out.println("Awww you're mean :'( go away!! I don't like you!");
-		}
-		else {
-			System.out.println("Invalid answer");
-		} //End if statement
+		boolean loop = false;
+		do {
+			System.out.println("Welcome you! My name is Cally :) Do you want to be my friend?(Yes or no!)");
+			String friendship = sc.nextLine();
+			if (friendship.equalsIgnoreCase("yes") || friendship.equalsIgnoreCase("y")){
+				mainMenu();
+			}
+			else if (friendship.equalsIgnoreCase("no")){
+				System.out.println("Awww you're mean :'( go away!! I don't like you!");
+			}
+			else {
+				System.out.println("Invalid answer");
+				loop = true;
+			} //End if statement
+		} while (loop = true);
 	} //End startCalc	
 	
 	
