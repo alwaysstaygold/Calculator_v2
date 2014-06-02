@@ -126,7 +126,7 @@ public class Calculator {
 	}
 	
 	
-	private void formulasMenu() {
+	public void formulasMenu() {
 		System.out.println("Would you like to use/find:");
 		System.out.println("1. quadratic formula");
 		System.out.println("2. pythagorean theorem");
@@ -135,7 +135,8 @@ public class Calculator {
 		Formulas formulas = new Formulas();
 		String choice = sc.nextLine();
 		if (choice.equalsIgnoreCase("quadratic formula") || Integer.parseInt(choice) == 1){
-			//algo
+			double x = formulas.quadraticFormula();
+			System.out.println("x = " +x); 
 		}
 		else if (choice.equalsIgnoreCase("pythagorean theorem") || Integer.parseInt(choice) == 2){
 			
