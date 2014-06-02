@@ -5,7 +5,10 @@ public class Calculator {
 	Scanner sc = new Scanner(System.in);
 	
 	public void start(){
-		
+		int num1 = 5;
+		num1 = num1*-4;
+		System.out.println(num1);
+				
 		System.out.println("Welcome you! My name is Cally :) Do you want to be my friend?(Yes or no!)");
 		String friendship = sc.nextLine();
 		if (friendship.equalsIgnoreCase("yes")){
@@ -19,13 +22,14 @@ public class Calculator {
 		} //End if statement
 	} //End startCalc	
 	
-	
+	//This is the main menu where the user decides between simple math and formulas
 	private void mainMenu() {
 		System.out.println("YAY!!! I have a friend!!! Let me go call my mommy!!!");
 		System.out.println("Alright, now that we have established our friendship I will do some math-y stuff for you!");
 		System.out.println("Would you like to do:");
 		System.out.println("1. Simple math");
 		System.out.println("2. Formulas");
+
 		String decision1 = sc.nextLine();
 		int tempChoiceInt = 0;
 		try {
@@ -91,20 +95,39 @@ public class Calculator {
 		}
 	}
 	
-	
+	//This is the formula menu where users decide which formula they want to work with
 	private void formulasMenu() {
+		Formulas formulas = new Formulas();
 		System.out.println("Would you like to use/find:");
 		System.out.println("1. quadratic formula");
 		System.out.println("2. pythagorean theorem");
 		System.out.println("3. area of a triangle");
 		System.out.println("4. area of a rectangle");
-		Formulas formulas = new Formulas();
+		
 		String choice = sc.nextLine();
-		if (choice.equalsIgnoreCase("quadratic formula") || Integer.parseInt(choice) == 1){
-			//algo
+		int tempChoiceInt = 0;
+		try {
+		tempChoiceInt = Integer.parseInt(choice);
 		}
-		else if (choice.equalsIgnoreCase("pythagorean theorem") || Integer.parseInt(choice) == 2){
-			
+		catch (Exception e) {
+			//Do nothing
+		}
+		if (choice.equalsIgnoreCase("quadratic formula") || tempChoiceInt == 1){
+			double sol1 = formulas.quadraticFormula();
+			double sol2 = formulas.quadraticFormula();
+			System.out.println("x = " + sol1 + "Or " + sol2);
+		}
+		else if (choice.equalsIgnoreCase("pythagorean theorem") || tempChoiceInt == 2){
+			double answer = formulas.pythagoreanTheorem(num1, num2);
+			System.out.println("The answer is " + answer);
+		}
+		else if (choice.equalsIgnoreCase("area of a triangle") || tempChoiceInt == 3){
+			double answer = formulas.areaTriangle(num1, num2);
+			System.out.println("The answer is " + answer);
+		}
+		else if (choice.equalsIgnoreCase("area of a rectangle") || tempChoiceInt == 4){
+			double answer = formulas.areaRectangle(num1, num2);
+			System.out.println("The answer is " + answer);
 		}
 	}
 
