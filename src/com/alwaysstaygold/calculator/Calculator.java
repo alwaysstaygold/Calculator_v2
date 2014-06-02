@@ -28,8 +28,13 @@ public class Calculator {
 			simpleMathMenu();
 		}
 		else if (decision1.equalsIgnoreCase("Formulas")){
-			System.out.println("Would you like to use the quadratic formula, the pythagorean theorem or ");
-			System.out.println("calculate area of a triangle or the area of a rectangle?");
+			System.out.println("Would you like to:");
+			System.out.println("1. Use the quadratic formula");
+			System.out.println("2. Use the pythagorean theorem");
+			System.out.println("3. Calculate the area of a triangle");
+			System.out.println("4. Calculate the area of a rectangle");
+			Formulas formulas = new Formulas();
+			String choice = sc.nextLine();
 		}
 		
 	} //End mainMenu
@@ -62,9 +67,9 @@ public class Calculator {
 		}
 		else if (choice.equalsIgnoreCase("Multiply") || Integer.parseInt(choice) == 3){
 			SimpleMath SimpleMath = new SimpleMath();
-			System.out.println("k");
+			System.out.println("I would like to request a number of you");
 			double num1 = sc.nextDouble();
-			System.out.println("k");
+			System.out.println("Thank you. Give me another and I'll multiply them together!");
 			double num2 = sc.nextDouble();
 			double product = SimpleMath.multiplication(num1, num2);
 			System.out.println("Your final number is " + product);
@@ -72,12 +77,12 @@ public class Calculator {
 		}
 		else if (choice.equalsIgnoreCase("Divide") || Integer.parseInt(choice) == 4){
 			SimpleMath SimpleMath = new SimpleMath();
-			System.out.println("l");
+			System.out.println("Type in a number");
 			double num1 = sc.nextDouble();
-			System.out.println("k");
+			System.out.println("One more number then I'll do the dividing thing!");
 			double num2 = sc.nextDouble();
 			double quotient = SimpleMath.division(num1, num2);
-			System.out.println("Your final number is " + quotient);
+			System.out.println("The quotient is " + quotient);
 		}
 		else {
 			System.out.println("Oh dear oh dear!! I believe something went horribly wrong!");
