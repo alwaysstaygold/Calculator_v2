@@ -46,8 +46,17 @@ public class Calculator {
 		System.out.println("3. Multiply");
 		System.out.println("4. Divide");
 		String choice = sc.nextLine();
-		if (choice.equalsIgnoreCase("add") || Integer.parseInt(choice) == 1){
-			SimpleMath SimpleMath = new SimpleMath();
+		SimpleMath SimpleMath = new SimpleMath();
+		
+		int tempChoiceInt = 0;
+		try {
+		tempChoiceInt = Integer.parseInt(choice);
+		}
+		catch (Exception e) {
+			//Do nothing
+		}
+		
+		if (choice.equalsIgnoreCase("add") || tempChoiceInt == 1){
 			System.out.println("Sweeeeet! Give me a number!");
 			double num1 = sc.nextDouble();
 			System.out.println("Mmmmmmm numbers! Give me another number!");
@@ -55,8 +64,7 @@ public class Calculator {
 			double sum = SimpleMath.addition(num1, num2);
 			System.out.println("Your final number is " + sum);
 		}
-		else if (choice.equalsIgnoreCase("Subtract") || Integer.parseInt(choice) == 2){
-			SimpleMath SimpleMath = new SimpleMath();
+		else if (choice.equalsIgnoreCase("Subtract") || tempChoiceInt == 2){
 			System.out.println("Sub... sub... subtraction scares me! But I'll do it anyway! Just for you!");
 			System.out.println("Give me a number please");
 			double num1 = sc.nextDouble();
@@ -65,8 +73,7 @@ public class Calculator {
 			double sum = SimpleMath.subtraction(num1, num2);
 			System.out.println("the answer is " + sum);
 		}
-		else if (choice.equalsIgnoreCase("Multiply") || Integer.parseInt(choice) == 3){
-			SimpleMath SimpleMath = new SimpleMath();
+		else if (choice.equalsIgnoreCase("Multiply") || tempChoiceInt == 3){
 			System.out.println("I would like to request a number of you");
 			double num1 = sc.nextDouble();
 			System.out.println("Thank you. Give me another and I'll multiply them together!");
@@ -75,8 +82,7 @@ public class Calculator {
 			System.out.println("Your final number is " + product);
 			
 		}
-		else if (choice.equalsIgnoreCase("Divide") || Integer.parseInt(choice) == 4){
-			SimpleMath SimpleMath = new SimpleMath();
+		else if (choice.equalsIgnoreCase("Divide") || tempChoiceInt == 4){
 			System.out.println("Type in a number");
 			double num1 = sc.nextDouble();
 			System.out.println("One more number then I'll do the dividing thing!");
