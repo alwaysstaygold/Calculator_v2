@@ -28,23 +28,52 @@ public class Calculator {
 	private void mainMenu() {
 		System.out.println("YAY!!! I have a friend!!! Let me go call my mommy!!!");
 		System.out.println("Alright, now that we have established our friendship I will do some math-y stuff for you!");
-		System.out.println("Would you like to do:");
-		System.out.println("1. Simple math");
-		System.out.println("2. Formulas");
-		String decision1 = sc.nextLine();
-		int tempChoiceInt = 0;
-		try {
-		tempChoiceInt = Integer.parseInt(decision1);
-		}
-		catch (Exception e) {
-			//Do nothing
-		}
-		if (decision1.equalsIgnoreCase("simple math") || tempChoiceInt == 1){
-			simpleMathMenu();
-		}
-		else if (decision1.equalsIgnoreCase("formulas") || tempChoiceInt == 2){
-			formulasMenu();	
-		}
+		
+		boolean loop;
+		do {
+			loop = false;
+			System.out.println("Would you like to do:");
+			System.out.println("1. Simple math");
+			System.out.println("2. Formulas");
+			String decision1 = sc.nextLine();
+			int tempChoiceInt = 0;
+			try {
+			tempChoiceInt = Integer.parseInt(decision1);
+			}
+			catch (Exception e) {
+				//Do nothing
+			}
+			String response;
+			boolean nLoop = false;
+			if (decision1.equalsIgnoreCase("simple math") || tempChoiceInt == 1){
+				simpleMathMenu();
+				
+				do {
+					System.out.print("Again? ");
+					response = sc.nextLine();
+					if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")){
+						loop = true;
+						nLoop = false;
+					}
+				} while (nLoop = true);
+			}
+			else if (decision1.equalsIgnoreCase("formulas") || tempChoiceInt == 2){
+				formulasMenu();	
+				
+				do {
+					System.out.print("Again? ");
+					response = sc.nextLine();
+					if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")){
+						loop = true;
+						nLoop = false;
+					}
+				} while (nLoop = true);
+			}
+			else {
+				System.out.println("Invalid answer.\n");
+				loop = true;
+			}
+		} while(loop = true);
 		
 	} //End mainMenu
 	
