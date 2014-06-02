@@ -6,7 +6,6 @@ public class Calculator_Starter {
 		//initialization 
 		Calculator calculator = new Calculator();
 		
-		
 		calculator.startCalc();
 
 	}

@@ -39,26 +39,33 @@ public class Calculator {
 		System.out.println("2. Subtract");
 		System.out.println("3. Multiply");
 		System.out.println("4. Divide");
-		SimpleMath SimpleMath = new SimpleMath();
+		SimpleMath simpleMath = new SimpleMath();
 		String choice = sc.nextLine();
+		int tempChoiceInt = 0;
+		try {
+		tempChoiceInt = Integer.parseInt(choice);
+		}
+		catch (Exception e) {
+			//Do nothing
+		}
 		System.out.println("Type in a number");
 		double num1 = sc.nextDouble();
 		System.out.println("Now another number please");
 		double num2 = sc.nextDouble();
-		if (choice.equalsIgnoreCase("add") || Integer.parseInt(choice) == 1){
-			double sum = SimpleMath.addition(num1, num2);
+		if (choice.equalsIgnoreCase("add") || tempChoiceInt == 1){
+			double sum = simpleMath.addition(num1, num2);
 			System.out.println("Your final number is " + sum);
 		}
-		else if (choice.equalsIgnoreCase("Subtract") || Integer.parseInt(choice) == 2){
-			double sum = SimpleMath.subtraction(num1, num2);
+		else if (choice.equalsIgnoreCase("Subtract") || tempChoiceInt == 2){
+			double sum = simpleMath.subtraction(num1, num2);
 			System.out.println("the answer is " + sum);
 		}
-		else if (choice.equalsIgnoreCase("Multiply") || Integer.parseInt(choice) == 3){
-			double product = SimpleMath.multiplication(num1, num2);
+		else if (choice.equalsIgnoreCase("Multiply") || tempChoiceInt == 3){
+			double product = simpleMath.multiplication(num1, num2);
 			System.out.println("Your final number is " + product);	
 		}
-		else if (choice.equalsIgnoreCase("Divide") || Integer.parseInt(choice) == 4){
-			double quotient = SimpleMath.division(num1, num2);
+		else if (choice.equalsIgnoreCase("Divide") || tempChoiceInt == 4){
+			double quotient = simpleMath.division(num1, num2);
 			System.out.println("The quotient is " + quotient);
 		}
 		else {
