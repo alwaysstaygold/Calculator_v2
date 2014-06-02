@@ -42,7 +42,7 @@ public class Calculator {
 		SimpleMath SimpleMath = new SimpleMath();
 		String choice = sc.nextLine();
 		if (choice.equalsIgnoreCase("add") || Integer.parseInt(choice) == 1){
-			System.out.println("Sweeeeet! Give me a number!");
+			System.out.println("Give me a number.");
 			double num1 = sc.nextDouble();
 			System.out.println("Mmmmmmm numbers! Give me another number!");
 			double num2 = sc.nextDouble();
