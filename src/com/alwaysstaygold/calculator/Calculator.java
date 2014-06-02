@@ -41,18 +41,46 @@ public class Calculator {
 		System.out.println("3. Multiply");
 		System.out.println("4. Divide");
 		String choice = sc.nextLine();
-		if (choice.equalsIgnoreCase("add") || Integer.parseInt(choice) == 1) {
+		if (choice.equalsIgnoreCase("add") || Integer.parseInt(choice) == 1){
+			SimpleMath SimpleMath = new SimpleMath();
+			System.out.println("Sweeeeet! Give me a number!");
+			double num1 = sc.nextDouble();
+			System.out.println("Mmmmmmm numbers! Give me another number!");
+			double num2 = sc.nextDouble();
+			double sum = SimpleMath.addition(num1, num2);
+			System.out.println("Your final number is " + sum);
+		}
+		else if (choice.equalsIgnoreCase("Subtract") || Integer.parseInt(choice) == 2){
+			SimpleMath SimpleMath = new SimpleMath();
+			System.out.println("Sub... sub... subtraction scares me! But I'll do it anyway! Just for you!");
+			System.out.println("Give me a number please");
+			double num1 = sc.nextDouble();
+			System.out.println("And another one");
+			double num2 = sc.nextDouble();
+			double sum = SimpleMath.subtraction(num1, num2);
+			System.out.println("the answer is " + sum);
+		}
+		else if (choice.equalsIgnoreCase("Multiply") || Integer.parseInt(choice) == 3){
+			SimpleMath SimpleMath = new SimpleMath();
+			System.out.println("k");
+			double num1 = sc.nextDouble();
+			System.out.println("k");
+			double num2 = sc.nextDouble();
+			double product = SimpleMath.multiplication(num1, num2);
+			System.out.println("Your final number is " + product);
 			
 		}
-
-		else if (choice.equals("subtract") || Integer.parseInt(choice) == 2) {
-			
+		else if (choice.equalsIgnoreCase("Divide") || Integer.parseInt(choice) == 4){
+			SimpleMath SimpleMath = new SimpleMath();
+			System.out.println("l");
+			double num1 = sc.nextDouble();
+			System.out.println("k");
+			double num2 = sc.nextDouble();
+			double quotient = SimpleMath.division(num1, num2);
+			System.out.println("Your final number is " + quotient);
 		}
-		else if (choice.equals("Multiply") || Integer.parseInt(choice) == 3) {
-			
-		}
-		else if (choice.equals("Divide") || Integer.parseInt(choice) == 4) {
-			
+		else {
+			System.out.println("Oh dear oh dear!! I believe something went horribly wrong!");
 		}
 	}
 	
