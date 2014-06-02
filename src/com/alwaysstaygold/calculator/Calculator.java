@@ -4,7 +4,7 @@ public class Calculator {
 	
 	Scanner sc = new Scanner(System.in);
 	
-	public void main(String[] args){
+	public void start(){
 		
 		System.out.println("Welcome you! My name is Cally :) Do you want to be my friend?(Yes or no!)");
 		String friendship = sc.nextLine();
@@ -23,12 +23,21 @@ public class Calculator {
 	private void mainMenu() {
 		System.out.println("YAY!!! I have a friend!!! Let me go call my mommy!!!");
 		System.out.println("Alright, now that we have established our friendship I will do some math-y stuff for you!");
-		System.out.println("Would you like to do simple math or formulas?");
+		System.out.println("Would you like to do:");
+		System.out.println("1. Simple math");
+		System.out.println("2. Formulas");
 		String decision1 = sc.nextLine();
-		if (decision1.equalsIgnoreCase("simple math")){
+		int tempChoiceInt = 0;
+		try {
+		tempChoiceInt = Integer.parseInt(decision1);
+		}
+		catch (Exception e) {
+			//Do nothing
+		}
+		if (decision1.equalsIgnoreCase("simple math") || tempChoiceInt == 1){
 			simpleMathMenu();
 		}
-		else if (decision1.equalsIgnoreCase("Formulas")){
+		else if (decision1.equalsIgnoreCase("formulas") || tempChoiceInt == 2){
 			formulasMenu();	
 		}
 		
