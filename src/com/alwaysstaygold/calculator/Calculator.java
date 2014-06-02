@@ -3,12 +3,8 @@ import java.util.Scanner;
 public class Calculator {
 	
 	Scanner sc = new Scanner(System.in);
-	
+	//this is where the program really starts
 	public void start(){
-		int num1 = 5;
-		num1 = num1*-4;
-		System.out.println(num1);
-				
 		System.out.println("Welcome you! My name is Cally :) Do you want to be my friend?(Yes or no!)");
 		String friendship = sc.nextLine();
 		if (friendship.equalsIgnoreCase("yes")){
@@ -96,7 +92,7 @@ public class Calculator {
 	}
 	
 	//This is the formula menu where users decide which formula they want to work with
-	private void formulasMenu() {
+	public void formulasMenu() {
 		Formulas formulas = new Formulas();
 		System.out.println("Would you like to use/find:");
 		System.out.println("1. quadratic formula");
@@ -114,19 +110,26 @@ public class Calculator {
 		}
 		if (choice.equalsIgnoreCase("quadratic formula") || tempChoiceInt == 1){
 			double sol1 = formulas.quadraticFormula();
+			System.out.println("x = "+sol1);
 			double sol2 = formulas.quadraticFormula();
-			System.out.println("x = " + sol1 + "Or " + sol2);
+			System.out.println("or x + "+sol2);
 		}
 		else if (choice.equalsIgnoreCase("pythagorean theorem") || tempChoiceInt == 2){
-			double answer = formulas.pythagoreanTheorem(num1, num2);
-			System.out.println("The answer is " + answer);
+			double num1=4;
+			double num2=3;
+			double answer = formulas.pythagoreanTheorem(num1,num2);
+			System.out.println("The answer is "+answer);
 		}
 		else if (choice.equalsIgnoreCase("area of a triangle") || tempChoiceInt == 3){
-			double answer = formulas.areaTriangle(num1, num2);
+			double num1=4;
+			double num2=3;
+			double answer = formulas.areaTriangle(num1,num2);
 			System.out.println("The answer is " + answer);
 		}
 		else if (choice.equalsIgnoreCase("area of a rectangle") || tempChoiceInt == 4){
-			double answer = formulas.areaRectangle(num1, num2);
+			double num1=4;
+			double num2=3;
+			double answer = formulas.areaRectangle(num1,num2);
 			System.out.println("The answer is " + answer);
 		}
 	}
