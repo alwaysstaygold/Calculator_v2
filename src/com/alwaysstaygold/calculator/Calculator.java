@@ -28,13 +28,7 @@ public class Calculator {
 			simpleMathMenu();
 		}
 		else if (decision1.equalsIgnoreCase("Formulas")){
-			System.out.println("Would you like to:");
-			System.out.println("1. Use the quadratic formula");
-			System.out.println("2. Use the pythagorean theorem");
-			System.out.println("3. Calculate the area of a triangle");
-			System.out.println("4. Calculate the area of a rectangle");
-			Formulas formulas = new Formulas();
-			String choice = sc.nextLine();
+			formulasMenu();	
 		}
 		
 	} //End mainMenu
@@ -45,9 +39,9 @@ public class Calculator {
 		System.out.println("2. Subtract");
 		System.out.println("3. Multiply");
 		System.out.println("4. Divide");
+		SimpleMath SimpleMath = new SimpleMath();
 		String choice = sc.nextLine();
 		if (choice.equalsIgnoreCase("add") || Integer.parseInt(choice) == 1){
-			SimpleMath SimpleMath = new SimpleMath();
 			System.out.println("Sweeeeet! Give me a number!");
 			double num1 = sc.nextDouble();
 			System.out.println("Mmmmmmm numbers! Give me another number!");
@@ -56,7 +50,6 @@ public class Calculator {
 			System.out.println("Your final number is " + sum);
 		}
 		else if (choice.equalsIgnoreCase("Subtract") || Integer.parseInt(choice) == 2){
-			SimpleMath SimpleMath = new SimpleMath();
 			System.out.println("Sub... sub... subtraction scares me! But I'll do it anyway! Just for you!");
 			System.out.println("Give me a number please");
 			double num1 = sc.nextDouble();
@@ -66,7 +59,6 @@ public class Calculator {
 			System.out.println("the answer is " + sum);
 		}
 		else if (choice.equalsIgnoreCase("Multiply") || Integer.parseInt(choice) == 3){
-			SimpleMath SimpleMath = new SimpleMath();
 			System.out.println("I would like to request a number of you");
 			double num1 = sc.nextDouble();
 			System.out.println("Thank you. Give me another and I'll multiply them together!");
@@ -76,7 +68,6 @@ public class Calculator {
 			
 		}
 		else if (choice.equalsIgnoreCase("Divide") || Integer.parseInt(choice) == 4){
-			SimpleMath SimpleMath = new SimpleMath();
 			System.out.println("Type in a number");
 			double num1 = sc.nextDouble();
 			System.out.println("One more number then I'll do the dividing thing!");
@@ -90,7 +81,19 @@ public class Calculator {
 	}
 	
 	private void formulasMenu() {
-		
+		System.out.println("Would you like to use/find:");
+		System.out.println("1. quadratic formula");
+		System.out.println("2. pythagorean theorem");
+		System.out.println("3. area of a triangle");
+		System.out.println("4. area of a rectangle");
+		Formulas formulas = new Formulas();
+		String choice = sc.nextLine();
+		if (choice.equalsIgnoreCase("quadratic formula") || Integer.parseInt(choice) == 1){
+			//algo
+		}
+		else if (choice.equalsIgnoreCase("pythagorean theorem") || Integer.parseInt(choice) == 2){
+			
+		}
 	}
 
 } //End class
